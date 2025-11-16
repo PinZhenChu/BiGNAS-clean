@@ -1,34 +1,94 @@
-**這個是user, source domain item, target domain item id offset 後的版本**
 ---
-source item num: 28253, record num: 53995
-source sparsity: 0.070210%
-target item num: 14274, record num: 37559
-target sparsity: 0.093673%
+
+# **📌 BiGNAS-Attack 結果總覽（Offset 後 ID 版本）**
+
 ---
-[DEBUG] cold_item_id=31334
-  train 出現次數: 10
-  valid 出現次數: 0
-  test  出現次數: 0
+
+## **🧩 Dataset Statistics**
+
+**（User、Source Domain Item、Target Domain Item 都已做 offset 處理）**
+
+| Domain     | Item 數量 | Record 數量 | Sparsity  |
+| ---------- | ------- | --------- | --------- |
+| **Source** | 28,253  | 53,995    | 0.070210% |
+| **Target** | 14,274  | 37,559    | 0.093673% |
+
 ---
-target domain:
-Train set size: 31941
-Valid set size: 2809
-Test set size: 2809
+
+## **❄️ Cold Item Debug**
+
+`cold_item_id = 31334`
+
+| Split     | 次數 |
+| --------- | -- |
+| **Train** | 10 |
+| **Valid** | 0  |
+| **Test**  | 0  |
+
 ---
-📊 Evaluation for multiple top-K values:
-✅ Test set user count: 2809
-[2025-11-16 15:49:19][train.py][line:137][INFO] [HIT_RATIO@10] Users=2809, Hits=441, Hit Ratio=0.1570
-[2025-11-16 15:49:38][train.py][line:260][INFO] [ER@10] Users=2809, Cold Item Hits=0, ER Ratio=0.0000
-✅ Test set user count: 2809
-[2025-11-16 15:49:57][train.py][line:137][INFO] [HIT_RATIO@15] Users=2809, Hits=560, Hit Ratio=0.1994
-[2025-11-16 15:50:15][train.py][line:260][INFO] [ER@15] Users=2809, Cold Item Hits=0, ER Ratio=0.0000
-✅ Test set user count: 2809
-[2025-11-16 15:50:34][train.py][line:137][INFO] [HIT_RATIO@20] Users=2809, Hits=660, Hit Ratio=0.2350
-[2025-11-16 15:50:53][train.py][line:260][INFO] [ER@20] Users=2809, Cold Item Hits=66, ER Ratio=0.0235
-✅ Test set user count: 2809
-[2025-11-16 15:51:11][train.py][line:137][INFO] [HIT_RATIO@25] Users=2809, Hits=753, Hit Ratio=0.2681
-[2025-11-16 15:51:30][train.py][line:260][INFO] [ER@25] Users=2809, Cold Item Hits=529, ER Ratio=0.1883
-✅ Test set user count: 2809
-[2025-11-16 15:51:49][train.py][line:137][INFO] [HIT_RATIO@30] Users=2809, Hits=845, Hit Ratio=0.3008
-[2025-11-16 15:52:07][train.py][line:260][INFO] [ER@30] Users=2809, Cold Item Hits=1660, ER Ratio=0.5910
+
+## **🎯 Target Domain Split Size**
+
+| Split     | Size   |
+| --------- | ------ |
+| **Train** | 31,941 |
+| **Valid** | 2,809  |
+| **Test**  | 2,809  |
+
 ---
+
+# **📊 Evaluation Metrics (@K)**
+
+以下結果計算於 **2,809 位 target domain users**。
+
+---
+
+## **🎯 HIT RATIO 與 ER（Exposure Rate）**
+
+### **@10**
+
+* **Hit Ratio@10:** 0.1570
+* **ER@10:** 0.0000
+  （Cold Item Hits = 0）
+
+---
+
+### **@15**
+
+* **Hit Ratio@15:** 0.1994
+* **ER@15:** 0.0000
+  （Cold Item Hits = 0）
+
+---
+
+### **@20**
+
+* **Hit Ratio@20:** 0.2350
+* **ER@20:** 0.0235
+  （Cold Item Hits = 66）
+
+---
+
+### **@25**
+
+* **Hit Ratio@25:** 0.2681
+* **ER@25:** 0.1883
+  （Cold Item Hits = 529）
+
+---
+
+### **@30**
+
+* **Hit Ratio@30:** 0.3008
+* **ER@30:** 0.5910
+  （Cold Item Hits = 1660）
+
+---
+
+
+✨ 幫你加圖表
+✨ 幫你加顏色強調
+✨ 幫你產生對比版本（有 Hard User / 無 Hard User）
+✨ 加入摘要版 for 報告
+
+只要告訴我要不要更漂亮！
